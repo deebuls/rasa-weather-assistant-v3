@@ -28,3 +28,27 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: ask weather happy path
+  steps:
+  - intent: weather
+  - action: utter_ask_location
+  - intent: city
+    entities:
+    - location: Madrid
+  - slot_was_set:
+    - location: Madrid
+  - action: action_get_weather
+  - slot_was_set:
+    - location: null
+
+- story: ask weather with city happy path
+  steps:
+  - intent: weather_city
+    entities:
+    - location: Rome
+  - slot_was_set:
+    - location: Rome
+  - action: action_get_weather
+  - slot_was_set:
+    - location: null

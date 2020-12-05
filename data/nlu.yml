@@ -90,3 +90,33 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: weather
+  examples: |
+    - tell me the weather
+    - I want to know the weather
+    - weather please
+    - what's the weather today
+    - what's the temperature right now
+    - hows the weather going to be
+    - i want to know the temperature
+
+- intent: weather_city
+  examples: |
+    - tell me the weather in [Paris](location)
+    - I want to know the weather in [London](location)
+    - weather for [Athens](location) please
+    - what's the weather today in [Berlin](location)
+    - what's the temperature in [Washington](location) right now
+    - hows the weather in [Brussels](location)
+    - i want the temperature at [Rome](location)
+
+- intent: city
+  examples: |
+    - [Liverpool](location)
+    - [Milan](location)
+    - [Frankfurt](location)
+    - [Porto](location)
+    - [Madrid](location)
+    - [Barcelona](location)
+    - [Oslo](location)
