@@ -42,4 +42,4 @@ This graph has been created with Rasa's internal command:
 $ rasa visualize
 ```
 
-![Rasa Visualization](./rasa_visualization.png)
+<p align="center"><img src="https://github.com/malamasn/rasa-weather-assistant/blob/main/rasa_visualization.png" width="450"></p>
