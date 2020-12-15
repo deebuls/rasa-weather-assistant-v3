@@ -31,3 +31,15 @@ Talk with your bot throught command line with:
 ```
 $ rasa shell
 ```
+
+
+## Visualization
+
+In the next graph all stories are visualized. The intents are shown in blue boxes and the bot's responses in white. The 2 stories on the left, starting with the `greet` intent are the default simple Rasa stories. Our weather assistant, the two created stories, is visualized in the right two pipelines.
+
+This graph has been created with Rasa's internal command:
+```
+$ rasa visualize
+```
+
+![Rasa Visualization](./rasa_visualization.png)
