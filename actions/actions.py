@@ -14,10 +14,13 @@ class ActionGetWeather(Action):
     def run(self, dispatcher, tracker, domain):
 
         city = tracker.get_slot('location')
-        api_token = <YOUR_API_TOKEN>
+        print ("Requested city : ", city)
+        api_token = "85a4e3c55b73909f42c6a23ec35b7147"
         url = "https://api.openweathermap.org/data/2.5/weather"
         payload = {"q": city, "appid": api_token, "units": "metric", "lang": "en"}
         response = requests.get(url, params=payload)
+        print ("Response ok", response.ok)
+        print ("response text", response.text)
         if response.ok:
             description = response.json()["weather"][0]["description"]
             temp = round(response.json()["main"]["temp"])
@@ -25,7 +28,8 @@ class ActionGetWeather(Action):
 
             msg = f"The current temperature in {cityGR} is {temp} degree Celsius. Today's forecast is {description}"
         else:
-            msg= "I'm sorry, an error with the requested city as occured."
+            msg= "I'm sorry, an error with the requested city as occured."+response.text
+
 
         dispatcher.utter_message(msg)
         return [SlotSet("location", None)]
